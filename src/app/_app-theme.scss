@@ -1,0 +1,31 @@
+@use '@angular/material' as mat;
+@use 'sass:color';
+@use 'sass:map';
+@use './pages/home/home-theme';
+@use './shared/components/navbar/navbar-theme';
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+  $warn: map.get($theme, warn);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $next-theme: mat.define-palette(mat.$red-palette);
+  $is-dark-theme: map.get($theme, is-dark);
+
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(mat.get-color-from-palette($primary, default), .45);
+  }
+
+  ::selection {
+    background-color: rgba(mat.get-color-from-palette($primary, default), .4);
+  }
+
+  .app-background {
+    background: mat.get-color-from-palette($background, background);
+  }
+
+  @include home-theme.theme($theme);
+  @include navbar-theme.theme($theme);
+}

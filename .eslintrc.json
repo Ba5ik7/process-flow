@@ -15,7 +15,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "processFlowAnimator",
+            "prefix": "ngx",
             "style": "camelCase"
           }
         ],
@@ -23,7 +23,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "process-flow-animator",
+            "prefix": "ngx",
             "style": "kebab-case"
           }
         ]
